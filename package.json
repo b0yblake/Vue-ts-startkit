@@ -1,35 +1,74 @@
 {
-  "name": "app-typescript-vue3",
-  "version": "1.0.0",
+  "name": "vue3-freaking-cart",
+  "version": "0.1.0",
+  "author": {
+    "name": "b0yblake",
+    "email": "lichnh.fe@gmail.com",
+    "url": "http://lich.work/"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore ."
   },
+  "main": "dist/index.js",
+  "files": [
+    "@types"
+  ],
   "dependencies": {
-    "@vuedx/typescript-plugin-vue": "^0.6.3",
-    "D": "^1.0.0",
-    "tailwindcss": "^2.1.2",
+    "@vitejs/plugin-vue-jsx": "^1.1.5",
+    "@vueuse/core": "^5.0.3",
+    "ant-design-vue": "^2.0.0-beta.9",
+    "axios": "^0.21.1",
+    "es6-promise": "^4.2.8",
+    "include-media": "^1.4.10",
+    "lodash-es": "^4.17.21",
+    "vite-plugin-components": "^0.11.1",
+    "vue": "^3.0.5",
+    "vue-axios": "^3.2.4",
+    "vue-i18n": "^8.24.4",
+    "vue-router": "^4.0.9",
+    "vuex": "^4.0.2",
+    "vuex-persistedstate": "^4.0.0-beta.3"
+  },
+  "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/line-clamp": "^0.2.0",
     "@tailwindcss/typography": "^0.4.0",
-    "@types/tailwindcss": "^2.0.2",
-    "vite-plugin-components": "^0.9.1",
-    "vue": "^3.0.5",
-    "sass": "^1.19.0",
-    "sass-loader": "^8.0.2",
-    "sass-resources-loader": "^2.1.0",
-    "vue-axios": "^3.2.4",
-    "vue-router": "^4.0.6",
-    "vuex": "^4.0.0"
-  },
-  "devDependencies": {
-    "@types/node": "^15.6.0",
-    "@vitejs/plugin-vue": "^1.2.2",
+    "@types/node": "^15.12.2",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "@vitejs/plugin-vue": "^1.2.3",
     "@vue/compiler-sfc": "^3.0.5",
-    "typescript": "^4.1.3",
-    "vite": "^2.3.3",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "autoprefixer": "^10.2.6",
+    "eslint": "^7.28.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-vue": "^7.11.1",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "miragejs": "^0.1.41",
+    "node-sass": "^6.0.0",
+    "postcss": "^8.3.5",
+    "prettier": "^2.3.1",
+    "sass": "^1.35.1",
+    "sass-loader": "^12.1.0",
+    "tailwindcss": "^2.2.0",
+    "typescript": "^4.3.3",
+    "vite": "^2.3.7",
     "vue-tsc": "^0.0.24"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,vue}": [
+      "eslint --fix"
+    ]
   }
 }

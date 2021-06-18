@@ -1,0 +1,43 @@
+@import '_variables.scss';
+@import '_reset.scss';
+@import '_fonts.scss';
+@import 'tailwind.css'; // import tailwind css and all UI
+
+//common style
+body,
+input,
+select,
+textarea,
+button {
+  font-family: $defaultFontFamily, sans-serif;
+  color: #333;
+  line-height: 1.4;
+  font-size: 14px;
+  letter-spacing: -.2px;
+}
+
+body {
+  background-color: #e4e4e4;
+}
+
+.a11y-hidden {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  /* IE 6,7 */
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+}
+
+.a11y-hidden.focusable:focus {
+  overflow: visible;
+  position: static;
+  clip: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+}

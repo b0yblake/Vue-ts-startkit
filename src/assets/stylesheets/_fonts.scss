@@ -1,0 +1,20 @@
+@font-face {
+  font-family: $defaultFontFamily;
+  src: url('../fonts/Roboto-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: $defaultFontFamily;
+  src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: $defaultFontFamily;
+  src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: CeraPro;
+  src: url('../fonts/CeraPro-Medium.otf') format('opentype');
+  font-weight: 500;
+}

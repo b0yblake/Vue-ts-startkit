@@ -1,19 +1,3 @@
-<script lang="ts">
-import { 
-  h,
-  defineComponent,
-} from 'vue'
-
-export default defineComponent({
-  name: "NotFound",
-  setup() {
-    return() => {
-      h(
-        'div',
-        {},
-        "Not Found Page!"
-      )
-    }
-  },
-})
-</script>
+<template>
+  <h1>404 PAGES</h1>
+</template>

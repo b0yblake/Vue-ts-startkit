@@ -1,0 +1,302 @@
+@mixin css3-prefix($property, $value) {
+	-webkit-#{$property}: #{$value};
+	-khtml-#{$property}: #{$value};
+	-moz-#{$property}: #{$value};
+	-ms-#{$property}: #{$value};
+	-o-#{$property}: #{$value};
+	#{$property}: #{$value};
+}
+
+@mixin border-radius($radius: 5px) {
+	@include css3-prefix('border-radius', $radius);
+}
+
+@mixin box-sizing($type: border-box) {
+	@include css3-prefix('box-sizing', $type);
+}
+
+@mixin opacity($opacity: 0.5) {
+	$opacityMultiplied: ($opacity * 100);
+	filter: alpha(opacity=$opacityMultiplied);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+ $opacityMultiplied + ")";
+	@include css3-prefix('opacity', $opacity);
+}
+
+@mixin clearfix {
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+    }
+}
+
+@mixin breakpoint($point) {
+	@if $point==desktop {
+		@media screen and(min-width: $screen-lg) {
+			@content;
+		}
+	}
+
+	@else if $point==tablet {
+		@media screen and(max-width: $screen-lg - 1) {
+			@content;
+		}
+	}
+
+	@else if $point==mobile {
+		@media screen and(max-width: $screen-sm) {
+			@content;
+		}
+	}
+
+	@else if $point==xsmobile {
+		@media screen and(max-width: $screen-xsm) {
+			@content;
+		}
+	}
+}
+
+@mixin multi-ellipsis($line) {
+	display: block;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: $line;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+}
+
+@mixin material-icon($icon) {
+    font-family: 'Material Icons';
+    content: $icon;
+    font-feature-settings: 'liga';
+    -webkit-font-feature-settings: 'liga';
+}
+
+@mixin ellipsis($line-clamp: 1) {
+  @if ($line-clamp == 1) {
+    display: block;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $line-clamp;
+    /*! autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /*! autoprefixer: on */
+  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Modern Browsers + IE (for not supported ...)
+@mixin ellipsis-multi-browsers($line-clamp: 1, $line-height: 1) {
+  @include ellipsis($line-clamp);
+  max-height: $line-clamp * $line-height + px;
+}
+
+@mixin unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &::-moz-selection { background:transparent; }
+  &::selection { background:transparent; }
+}
+
+@mixin box-sizing($type: border-box) {
+  @include css3-prefix('box-sizing', $type);
+}
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin inline-flex {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+  // Set a variable to be used by box-flex properties
+  $fg-boxflex: $fg;
+
+  // Box-Flex only supports a flex-grow value so let's grab the
+  // first item in the list and just return that.
+  @if type-of($fg) == 'list' {
+    $fg-boxflex: nth($fg, 1);
+  }
+
+  -webkit-box-flex: $fg-boxflex;
+  -webkit-flex: $fg $fs $fb;
+  -moz-box-flex: $fg-boxflex;
+  -moz-flex: $fg $fs $fb;
+  -ms-flex: $fg $fs $fb;
+  flex: $fg $fs $fb;
+}
+
+// Values: flex-start | flex-end | center | space-between | space-around
+// Default: flex-start
+@mixin justify-content($value: center) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  -moz-justify-content: $value;
+  -ms-justify-content: $value;
+  justify-content: $value;
+}
+
+// Values: flex-start | flex-end | center | baseline | stretch
+// Default: center
+@mixin align-items($value: center) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  -moz-align-items: $value;
+  align-items: $value;
+}
+
+// Values: auto | flex-start | flex-end | center | baseline | stretch
+// Default: auto
+
+@mixin align-self($value: auto) {
+  // No Webkit Box Fallback.
+  -webkit-align-self: $value;
+  -moz-align-self: $value;
+  @if $value == flex-start {
+    -ms-flex-item-align: start;
+  } @else if $value == flex-end {
+    -ms-flex-item-align: end;
+  } @else {
+    -ms-flex-item-align: $value;
+  }
+  align-self: $value;
+}
+
+// Values: flex-start | flex-end | center | space-between | space-around | stretch
+// Default: center
+@mixin align-content($value: center) {
+  // No Webkit Box Fallback.
+  -webkit-align-content: $value;
+  -moz-align-content: $value;
+  @if $value == flex-start {
+    -ms-flex-line-pack: start;
+  } @else if $value == flex-end {
+    -ms-flex-line-pack: end;
+  } @else {
+    -ms-flex-line-pack: $value;
+  }
+  align-content: $value;
+}
+
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+  } @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+  } @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+  }
+  -webkit-flex-direction: $value;
+  -moz-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+@mixin flex-shrink($shrink) {
+  -webkit-flex-shrink: $shrink;
+  -moz-flex-shrink: $shrink;
+  -ms-flex-shrink: $shrink;
+  flex-shrink: $shrink;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+@mixin cell-header-must($list: null,$from-last: null){
+
+  @each $num in $list {
+    ::v-deep .tui-grid-rside-area {
+      .tui-grid-header-area {
+        th {
+          &:nth-child(#{$num}) {
+            &:after {
+              content: "*";
+              display: inline-block;
+              vertical-align: super;
+              font-size: 10px;
+              color: #fd5788;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*If overflow 20, nth-child is not working.
+    In that case, count from last and pass to second argument.
+  */
+  @if($from-last){
+    @each $num2 in $from-last {
+      ::v-deep .tui-grid-rside-area {
+        .tui-grid-header-area {
+          th {
+            &:nth-last-child(#{$num2}) {
+              &:after {
+                content: "*";
+                display: inline-block;
+                vertical-align: super;
+                font-size: 10px;
+                color: #fd5788;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

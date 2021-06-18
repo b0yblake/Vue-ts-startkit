@@ -1,25 +1,22 @@
-import {
-  createWebHistory,
-  createRouter,
-  RouteRecordRaw,
-  Router,
-} from "vue-router";
+import { createRouter, createWebHashHistory, createWebHistory, RouteRecordRaw } from 'vue-router'
 
-import NotFound from "@/views/NotFound.vue";
-import About from "@/views/About.vue";
-
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
-    path: "/about",
-    name: "About",
-    component: About,
+    path: '/',
+    component: () => import('@/views/HomePage.vue'), // use default page
+    children: [
+      // { path: '/', component: () => import('./views/index.vue') },
+      // { path: '/album/:path/:id.html', component: () => import('./views/album.vue') },
+      // { path: '/song/:path/:id.html', component: () => import('./views/song.vue')},
+      {
+        path: '/:path(.*)*',
+        component: () => import('@/views/NotFound.vue'),
+      },
+    ],
   },
-  { path: '/:path(.*)', name: "NotFound", component: NotFound, },
-];
+]
 
-const router: Router = createRouter({
-  history: createWebHistory(),
+export default createRouter({
+  history: createWebHashHistory(),
   routes,
-});
-
-export default router;
+})
