@@ -53,7 +53,7 @@ css: {
 // 
 ```
 
-### Giải thích từng bước ✔
+### Step ✔
 - Sử dụng attribute `lang` tại `<script>` 
 
 ```
@@ -62,7 +62,7 @@ css: {
 </script>
 ```
 
-- Cú pháp `defineComponent` tại export là cần thiết để chạy export dưới dạng file typeScript
+- Function `defineComponent` tại export được gọi tới để kiểm tra `out-of-the-box type checking` cho component
 
 ```
 import { defineComponent } from 'vue'
@@ -71,10 +71,44 @@ export default defineComponent({
 })
 ```
 
-
 - Cùng xem lại các kiểu dữ liệu trong `typeScript`:
 
 | All    | Loại                                                                                              |
 | -------| :-------------------------------------------------------------------------------------------------|
 | Tất cả | boolean , number , string , array , object , tuple , enum , any , void , undefined , null , never |
 | Common | boolean , number , string , array , object, void , undefined , null                               |
+
+- Cú pháp `PropType` để có thể sử dụng được các kiểu generic type (thay vì kiểu prop type system đơn thuần như vue2)
+- Here we’re still using Vue’s default prop type system (the Object part), but we’re only using it as a middleman. <br> We first set the prop type as Object, but we soon converted it to CharCountParams through PropType.<br> (PropType is a TypeScript type intended for this situation.)
+
+```
+// Props type system Vue2
+export default {
+  props: {
+    params: {
+      type: Object,
+      required: true,
+    }
+  },
+}
+```
+
+```
+// Prop type new in Vue3
+import { PropType , defineComponent } from 'vue'
+import { CharCountParams } from "@/@types/CharCountParams.interface"
+
+export default defineComponent({
+  props: {
+    params: {
+      type: Object as PropType<CharCountParams>,
+      required: true,
+    }
+  },
+})
+```
+
+- 
+
+
+
