@@ -1,21 +1,16 @@
 <template>
-  <div class="wrap">
-    Main home
-  </div>
+  <footer class="footer">
+    The Footer
+  </footer>
 </template>
 
 <script lang="ts">
 import {
-  defineComponent,
-  ref,
+  defineComponent
 } from 'vue'
 
 export default defineComponent({
-  name: "HomePage",
-  setup() {
-    return {
-    }
-  }
+  name: "TheFooter"
 })
 </script>
 

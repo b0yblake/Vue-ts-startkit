@@ -1,21 +1,14 @@
 <template>
-  <div class="wrap">
-    Main home
-  </div>
+  <header class="header">The Header</header>
 </template>
 
 <script lang="ts">
 import {
-  defineComponent,
-  ref,
+  defineComponent
 } from 'vue'
 
 export default defineComponent({
-  name: "HomePage",
-  setup() {
-    return {
-    }
-  }
+  name: "TheHeader"
 })
 </script>
 

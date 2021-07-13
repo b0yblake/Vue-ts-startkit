@@ -1,9 +1,9 @@
 <template>
   <div :class="$style.wrap">
+
     <TheHeader />
-    <TheNavigation />
+    
     <main :class="$style.main">
-      <!-- <div id="scene"></div> -->
       <slot/>
     </main>
     
@@ -12,11 +12,13 @@
 </template>
 
 <script>
-export default {
-  name: `LayoutDefault`,
-};
+import {
+  defineComponent
+} from 'vue'
+export default defineComponent({
+  name: `LayoutDefault`
+})
 </script>
 
 <style lang="scss" module>
-
 </style>
