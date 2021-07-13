@@ -93,15 +93,15 @@ button::-moz-focus-inner {
   margin: -1px;
 }
 
-// input,
-// button,
-// select {
-//     -webkit-border-radius: 0;
-//     border-radius: 0;
-//     -webkit-appearance: none;
-//     -moz-appearance: none;
-//     appearance: none;
-// }
+input,
+button,
+select {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
 
 address,
 caption,

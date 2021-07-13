@@ -2,6 +2,7 @@
 @import '_reset.scss';
 @import '_fonts.scss';
 @import 'tailwind.css'; // import tailwind css and all UI
+@import 'theme.scss';
 
 //common style
 body,
@@ -17,7 +18,7 @@ button {
 }
 
 body {
-  background-color: #e4e4e4;
+  // background-color: #f7f7f7;
 }
 
 .a11y-hidden {
@@ -40,4 +41,13 @@ body {
   width: auto;
   height: auto;
   margin: 0;
+}
+
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
 }

@@ -2,9 +2,11 @@ import { createApp } from 'vue'
 import App from '@/App.vue'
 import router from '@/router'
 // import store from '@/store'
+
 import { AppConfig } from '@/config/app'
 
-import { loadAllPlugins } from '@/plugins'
+// import { loadAllPlugins } from '@/plugins'
+import Fontawesome from '@/plugins/fontawsome'
 
 // import './styles/antd.less'
 
@@ -14,9 +16,11 @@ app.config.globalProperties = AppConfig
 
 
 /** Load all Plugins */
-loadAllPlugins(app)
+// loadAllPlugins(app)
+
 
 /** Load depen needs */
 // app.use(store)
+app.component('fa', Fontawesome)
 app.use(router)
 app.mount('#app')
