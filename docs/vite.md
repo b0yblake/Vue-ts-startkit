@@ -8,18 +8,17 @@
 ### New features of vite uses `vite.config.js`
 
 <details>
-<summary></summary><br><b>
-</details>
-
-<details>
 <summary>Declare the path "@" instead of "/src"</summary><br><b>
+
 ```
 alias: [{find: "@", replacement: path.resolve(__dirname, '/src')}
 ```
+
 </details>
 
 <details>
 <summary>Declare the path of variable source to use variable in style tag in components</summary><br><b>
+
 ```
 css: {
   preprocessorOptions: {
@@ -32,17 +31,21 @@ css: {
   } 
 }
 ```
+
 </details>
 
 <details>
 <summary>Instead of `Vue-CLI` use webpack: `import.env`</summary><br><b>
+
 ```
 - 
 ```
+
 </details>
 
 <details>
 <summary>Customize field line in `vite.config.js`</summary><br><b>
+
 ```
 // File `.env.production`
 VITE_NAME=Wheatgrass
@@ -53,20 +56,21 @@ import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
 export default ({ mode }) => {
-    process.env = {...process.env, ...loadEnv(mode, process.cwd())};
+  process.env = {...process.env, ...loadEnv(mode, process.cwd())};
 
-    // import.meta.env.VITE_NAME available here with: process.env.VITE_NAME
-    // import.meta.env.VITE_PORT available here with: process.env.VITE_PORT
+  // import.meta.env.VITE_NAME available here with: process.env.VITE_NAME
+  // import.meta.env.VITE_PORT available here with: process.env.VITE_PORT
 
-    return defineConfig({
-        plugins: [vue()],
+  return defineConfig({
+    plugins: [vue()],
 
-        server: {
-          port: process.env.VITE_PORT,
-        },
-    });
+    server: {
+      port: process.env.VITE_PORT,
+    },
+  });
 }
 ```
+
 </details>
 
 
