@@ -9,11 +9,16 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-    "types": ["vite/client"],
+    "types": ["vite/client", "jest", "node"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "/mock/*": ["mock/*"],
+      "/server/*": ["server/*"]
     },
+    "plugins": [
+      { "name": "@vuedx/typescript-plugin-vue" }
+    ],
     "strictNullChecks": false
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

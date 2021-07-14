@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from '@/App.vue'
 import router from '@/router'
-import store from '@/store'
+// import store from '@/store'
 
 
 /** Load style sheets */
@@ -24,7 +24,7 @@ import Fontawesome from '@/plugins/fontawsome'
 
 
 /** Load depen needs */
-app.use(store)
+// app.use(store)
 app.component('fa', Fontawesome)
 app.use(router)
 app.mount('#app')

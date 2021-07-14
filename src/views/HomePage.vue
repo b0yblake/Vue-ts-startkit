@@ -1,23 +1,21 @@
 <template>
-  <div class="wrap">
-    Main home
+  <div class="home-layout">
+    <LayoutDefault>
+      Main home
+    </LayoutDefault>
   </div>
 </template>
 
 <script lang="ts">
 import {
-  defineComponent,
-  ref,
+  defineComponent
 } from 'vue'
+import LayoutDefault from '@/templates/layouts/LayoutDefault.vue'
 
 export default defineComponent({
   name: "HomePage",
-  setup() {
-    return {
-    }
+  components: {
+    LayoutDefault
   }
 })
 </script>
-
-<style lang="scss" scoped>
-</style>
