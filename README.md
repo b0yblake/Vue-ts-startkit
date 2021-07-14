@@ -60,8 +60,3 @@ npm install
 npm run dev
 npm run build
 ```
-
-| All    | Loại                                                                                              |
-| -------| :-------------------------------------------------------------------------------------------------|
-| Tất cả | boolean , number , string , array , object , tuple , enum , any , void , undefined , null , never |
-| Common | boolean , number , string , array , object, void , undefined , null                               |

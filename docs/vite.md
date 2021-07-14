@@ -8,7 +8,7 @@
 ### New features of vite uses `vite.config.js`
 
 <details>
-<summary>Declare the path "@" instead of "/src"</summary><br><b>
+<summary>Declare the path "@" instead of "/src"</summary><br>
 
 ```
 alias: [{find: "@", replacement: path.resolve(__dirname, '/src')}
@@ -17,7 +17,7 @@ alias: [{find: "@", replacement: path.resolve(__dirname, '/src')}
 </details>
 
 <details>
-<summary>Declare the path of variable source to use variable in style tag in components</summary><br><b>
+<summary>Declare the path of variable source to use variable in style tag in components</summary><br>
 
 ```
 css: {
@@ -35,7 +35,7 @@ css: {
 </details>
 
 <details>
-<summary>Instead of `Vue-CLI` use webpack: `import.env`</summary><br><b>
+<summary>Instead of `Vue-CLI` use webpack: `import.env`</summary><br>
 
 ```
 - 
@@ -44,7 +44,7 @@ css: {
 </details>
 
 <details>
-<summary>Customize field line in `vite.config.js`</summary><br><b>
+<summary>Customize field line in `vite.config.js`</summary><br>
 
 ```
 // File `.env.production`
