@@ -25,10 +25,21 @@
   "files": [
     "@types"
   ],
+  "license": "MIT",
+  "types": "./@types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/b0yblake/vue-ts-quick"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^1.1.5",
+    "@vue/test-utils": "^2.0.0-rc.4",
     "@vueuse/core": "^5.1.3",
-    "ant-design-vue": "^2.0.0-beta.9",
     "axios": "^0.21.1",
     "cross-env": "^7.0.3",
     "es6-promise": "^4.2.8",
@@ -58,9 +69,12 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
     "autoprefixer": "^10.2.6",
+    "commitizen": "^4.2.3",
     "eslint": "^7.28.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-jest": "^24.3.5",
     "eslint-plugin-vue": "^7.11.1",
+    "eslint-plugin-import": "^2.22.1",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
     "node-sass": "^6.0.0",
@@ -74,20 +88,12 @@
     "vue-jest": "^5.0.0-0",
     "vue-tsc": "^0.0.24"
   },
-  "license": "MIT",
-  "types": "./@types/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/.../vue-ts-quick"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.{ts,vue}": [
-      "eslint --fix"
-    ]
+    "*.{vue,js,ts}": "eslint --fix"
   }
 }
