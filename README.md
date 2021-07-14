@@ -15,6 +15,7 @@
 This project includes a `docs` folder with more details on:
 
 1.  [Setup and development](docs/development.md)
+2.  [Tooling Vite](docs/vite.md)
 2.  [Architecture](docs/architecture.md)
 3.  [Languages and technologies](docs/tech.md)
 4.  [Routing, layouts, and views](docs/routing.md)
@@ -59,3 +60,8 @@ npm install
 npm run dev
 npm run build
 ```
+
+| All    | Loại                                                                                              |
+| -------| :-------------------------------------------------------------------------------------------------|
+| Tất cả | boolean , number , string , array , object , tuple , enum , any , void , undefined , null , never |
+| Common | boolean , number , string , array , object, void , undefined , null                               |
