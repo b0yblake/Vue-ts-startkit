@@ -14,7 +14,6 @@
 This project includes a `docs` folder with more details on:
 
 1.  [Setup and development](docs/development.md)
-2.  [Tooling Vite](docs/vite.md)
 2.  [Architecture](docs/architecture.md)
 3.  [Languages and technologies](docs/tech.md)
 4.  [Routing, layouts, and views](docs/routing.md)

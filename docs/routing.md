@@ -2,16 +2,13 @@
 
 ### Routing
 
-- `VueX3 for Vue2` https://vuex.vuejs.org/installation.html
-- `VueX4 for Vue3 optionAPI` https://next.vuex.vuejs.org/installation.html
-- `VueX5 for CompositionAPI (not production, it's RFC)` https://www.youtube.com/watch?v=WmgQH4pOhUc
+- https://next.router.vuejs.org/installation.html
 
 ```
-// Install VueX4
-npm install vuex@next --save
+// Install Router
+npm install vue-router@4
 
-// Path
-@/router/index.ts
+// Path: @/router/index.ts
 
 └── src/
     ├── router/
