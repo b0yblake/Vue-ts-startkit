@@ -14,7 +14,7 @@
 - Sync convention between idea now is simple by using editorconfig
 - Go to `VisualStudioCode` -> `Extendsion` -> `editorconfig`
 
-1. Create file `.editorconfig`
+1. Create file `.editorconfig` at root directory
 
 ```
 # Editor configuration, see http://editorconfig.org
@@ -34,6 +34,10 @@ insert_final_newline = true # Always insert a new line at the end of the file
 max_line_length = off
 trim_trailing_whitespace = false
 ```
+
+2. Install plugin to cover in idle `VisualStudioCode` -> `Extension`
+
+<img src="@screenshot/doc1.jpg" alt="" width="100%" height="auto"><br/>
 
 ### Prettier
 
@@ -63,15 +67,64 @@ module.exports = {
 }
 ```
 
-3. Simple run
+3. Run to check
    > npx prettier --write .
+
+4. Install plugin to cover in idle `VisualStudioCode` -> `Extension`
+
+<img src="@screenshot/doc2.jpg" alt="" width="100%" height="auto"><br/>
 
 ### ESLint
 
 - https://eslint.org/
 - ESLint is a tool for finding and reporting problems in the code, and supports automatic repair of some problems
--
 
 1. Install
 
 > npm i eslint -D
+
+> npx eslint --init
+> Select: To check syntax, find problems, and enforce code style
+> Select: JavaScript modules (import/export)
+> Select: Vue.js
+> Select: Yes
+> Select: Browser
+> Select: Use a popular style guide
+> Select: Airbnb: https://github.com/airbnb/javascript
+> Select: JavaScript
+> Select: Yes
+
+`What if` all process not working auto, please refer to run command: 
+
+> npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-base eslint-plugin-import eslint-plugin-vue -D
+
+2. Open file `.eslintrc.js` and check
+
+```
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
+  },
+  extends: ['plugin:vue/essential', 'airbnb-base'],
+  parserOptions: {
+    ecmaVersion: 12,
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module'
+  },
+  plugins: ['vue', '@typescript-eslint'],
+  rules: {}
+}
+```
+
+
+
+### Compine ESLint + Prettier
+
+
+
+
+
+
+
