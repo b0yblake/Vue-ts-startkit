@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import ViteComponents from 'vite-plugin-components'
 import vueJsx from '@vitejs/plugin-vue-jsx';
+import { resolve } from 'path'
 
-const path = require('path');
 const isProd = process.env.NODE_ENV === 'production';
 
 // https://vitejs.dev/config/
@@ -12,13 +12,13 @@ export default defineConfig({
     alias: [
       {
         find: "@",
-        replacement: path.resolve(__dirname, '/src')
+        replacement: resolve(__dirname, '/src')
       },
       {
         find: "~",
-        replacement: path.resolve(__dirname, '/src')
+        replacement: resolve(__dirname, '/src')
       },
-      // {find: 'views', replacement: path.resolve(__dirname, 'src/views')},
+      // {find: 'views', replacement: resolve(__dirname, 'src/views')},
     ],
   },
   css: {
@@ -30,6 +30,12 @@ export default defineConfig({
         `
       }
     } 
+  },
+  base: './', // Set the packaging path
+  server: {
+    port: 3000, // Set the service start port number
+    open: true, // Set whether to automatically open the browser when the service starts
+    cors: true
   },
   plugins: [
     vue(),

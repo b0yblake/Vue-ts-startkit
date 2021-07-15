@@ -1,5 +1,4 @@
 <h1 align="center">[WIP] - Vue Vite TypeScript startkit</h1>
-<strong align="center">Suprise, It's Rich</strong>
 
 > This template should help get you started developing with Vue 3 and Typescript in Vite.. Questions, feedback, and for now, even bikeshedding are welcome.
 
@@ -25,11 +24,6 @@ This project includes a `docs` folder with more details on:
 8.  [Editor integration](docs/editors.md)
 9.  [Building and deploying to production](docs/production.md)
 
-## Rich features (Compact technique)
-- `Languages & tool` TypeScript & Vite tool 
-- ``
-- ``
-
 ## FAQ's
 
 <details>
@@ -53,7 +47,7 @@ This project includes a `docs` folder with more details on:
 
 </details>
 
-## Getting started >
+## Getting started
 
 ```
 npm install
