@@ -6,7 +6,7 @@
 
 - [**Vite & TypeScript already**](#documentation): Vite tool & TypeScript has included making Vue great again
 - [**Thorough documentation**](#documentation): All knowledge was care for (tested) & written very details
-- [**Guaranteed consistency**](docs/linting.md): Lint and prettier / Git hook for caring code type convention 
+- [**Guaranteed consistency**](docs/linting.md): Lint and prettier / Git hook for caring code type convention
 - [**First-class tests**](docs/tests.md): Practice test-driven development with sample unit(Jest - by Facebook)
 
 ## Documentation

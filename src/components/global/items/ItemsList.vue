@@ -1,47 +1,46 @@
 <template>
-  <div class="flex ">
-    <h3 class="text-bold">{{ title }}</h3>
-    
-    <ul>
-      <li v-for="(item, index) in listItem" :key="`${item.name}_${index}`">{{ item.name }}</li>
-    </ul>
+	<div class="flex">
+		<h3 class="text-bold">{{ title }}</h3>
+		<ul>
+			<li
+				v-for="(item, index) in listItem"
+				:key="`${item.name}_${index}`"
+				class="'a'"
+				:class="count"
+			>
+				{{ item.name }}
+			</li>
+		</ul>
+	</div>
 
-  </div>
-
-
-  Count: {{ count }}
-
+	Count: {{ count }}
 </template>
 <script lang="ts">
-import {
-  ref,
-  defineComponent,
-  PropType,
-} from 'vue'
+import { ref, defineComponent, PropType } from "vue";
 
 export default defineComponent({
-  name: "ItemsList",
-  props: {
-    listItem: {
-      type: Array as PropType<any[]>,
-      required: true,
-      validator: (listItem: any) => {
-        return listItem.map(item => !!item.name)
-      }
-    },
-    title: {
-      type: String,
-      required: true,
-      validator: (title: String) => {
-        return !!title
-      }
-    }
-  },
-  setup() {
-    const count = ref(0);
-    return {
-      count,
-    }
-  },
-})
+	name: "ItemsList",
+	props: {
+		listItem: {
+			type: Array as PropType<any[]>,
+			required: true,
+			validator: (listItem: any) => {
+				return listItem.map((item) => !!item.name);
+			},
+		},
+		title: {
+			type: String,
+			required: true,
+			validator: (title: String) => {
+				return !!title;
+			},
+		},
+	},
+	setup() {
+		const count = ref(0);
+		return {
+			count,
+		};
+	},
+});
 </script>

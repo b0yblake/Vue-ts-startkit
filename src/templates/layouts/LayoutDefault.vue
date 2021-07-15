@@ -1,35 +1,32 @@
 <template>
-  <div :class="$style.wrap">
+	<div :class="$style.wrap">
+		<!-- THE HEADER -->
+		<TheHeader />
+		<!-- //THE HEADER -->
 
-    <!-- THE HEADER -->
-    <TheHeader />
-    <!-- //THE HEADER -->
-    
-    <!-- MAIN -->
-    <main :class="$style.main">
-      <slot/>
-    </main>
-    <!-- //MAIN -->
+		<!-- MAIN -->
+		<main :class="$style.main">
+			<slot />
+		</main>
+		<!-- //MAIN -->
 
-    <!-- THE FOOTER -->
-    <TheFooter />
-    <!-- //THE FOOTER -->
-  </div>
+		<!-- THE FOOTER -->
+		<TheFooter />
+		<!-- //THE FOOTER -->
+	</div>
 </template>
 
 <script>
-import {
-  defineComponent
-} from 'vue'
+import { defineComponent } from "vue";
 export default defineComponent({
-  name: `LayoutDefault`
-})
+	name: `LayoutDefault`,
+});
 </script>
 
 <style lang="scss" module>
 .wrap {
-  .main {
-    position: relative;
-  }
+	.main {
+		position: relative;
+	}
 }
 </style>

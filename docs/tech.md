@@ -1,6 +1,7 @@
 <h1 align="center">Vite tooling</h1>
 
 ### Next Generation Frontend Tooling
+
 - https://vitejs.dev/guide/why.html
 - https://github.com/vitejs/awesome-vite
 - https://vitejs.dev/config/
@@ -28,17 +29,19 @@ css: {
         @import "./src/assets/stylesheets/include-media";
       `
     }
-  } 
+  }
 }
 ```
 
 </details>
 
 <details>
-<summary>Instead of `Vue-CLI` use webpack: `import.env`</summary><br>
+<summary>Instead of import single files, we had new feature to import multiple modules</summary><br>
+
+- https://vitejs.dev/guide/features.html#glob-import
 
 ```
-- 
+
 ```
 
 </details>
@@ -72,5 +75,3 @@ export default ({ mode }) => {
 ```
 
 </details>
-
-

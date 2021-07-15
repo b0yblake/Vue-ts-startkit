@@ -34,13 +34,13 @@ footer,
 nav,
 figure,
 main {
-  margin: 0;
-  padding: 0
+	margin: 0;
+	padding: 0;
 }
 
 * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 article,
@@ -53,14 +53,14 @@ footer,
 nav,
 figure,
 main {
-  display: block
+	display: block;
 }
 
 html,
 body {
-  height: 100%;
-  -webkit-text-size-adjust: none;
-  -ms-text-size-adjust: none
+	height: 100%;
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
 }
 
 img,
@@ -68,43 +68,43 @@ form,
 fieldset,
 svg,
 li {
-  border: 0;
-  vertical-align: top
+	border: 0;
+	vertical-align: top;
 }
 
 ul,
 ol {
-  list-style: none
+	list-style: none;
 }
 
 button {
-  overflow: visible;
-  border: 0;
-  background-color: transparent;
-  cursor: pointer
+	overflow: visible;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
 }
 
 button:disabled {
-  cursor: default;
+	cursor: default;
 }
 
 button::-moz-focus-inner {
-  padding: 0;
-  margin: -1px;
+	padding: 0;
+	margin: -1px;
 }
 
 input,
 button,
 select {
-    -webkit-border-radius: 0;
-    border-radius: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 address,
 caption,
 em {
-  font-style: normal
+	font-style: normal;
 }

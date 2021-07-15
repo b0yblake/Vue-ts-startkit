@@ -7,7 +7,7 @@
 // }
 
 interface ImportMeta {
-  env: {
-    VITE_API_V2?: string
-  };
+	env: {
+		VITE_API_V2?: string;
+	};
 }

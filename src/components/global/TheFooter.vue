@@ -1,18 +1,13 @@
 <template>
-  <footer class="footer">
-    The Footer
-  </footer>
+	<footer class="footer">The Footer</footer>
 </template>
 
 <script lang="ts">
-import {
-  defineComponent
-} from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "TheFooter"
-})
+	name: "TheFooter",
+});
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

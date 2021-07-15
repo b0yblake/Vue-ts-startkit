@@ -1,28 +1,24 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-    "types": ["vite/client", "jest", "node"],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"],
-      "/mock/*": ["mock/*"],
-      "/server/*": ["server/*"]
-    },
-    "plugins": [
-      { "name": "@vuedx/typescript-plugin-vue" }
-    ],
-    "strictNullChecks": false
-  },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "exclude": [
-    "node_modules"
-  ]
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"strict": true,
+		"jsx": "preserve",
+		"sourceMap": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+		"types": ["vite/client", "jest", "node"],
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"],
+			"/mock/*": ["mock/*"],
+			"/server/*": ["server/*"]
+		},
+		"plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
+		"strictNullChecks": false
+	},
+	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+	"exclude": ["node_modules"]
 }

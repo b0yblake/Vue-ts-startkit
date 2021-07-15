@@ -52,12 +52,12 @@ import LayoutDefault from '@/templates/layouts/LayoutDefault.vue'
 
 ### Views
 
-- Calling all files *.vue
+- Calling all files \*.vue
 
 ```
 └── src/
     ├── views/
-      ├── About.vue 
+      ├── About.vue
       ├── HomePage.vue
       ├── NotFound.vue
 ```

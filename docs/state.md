@@ -12,6 +12,6 @@ npm install vuex@next --save
 
 // Path: @/store/
 
-
+//
 
 ```

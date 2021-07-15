@@ -1,15 +1,12 @@
-import { 
-  ref,
-  readonly,
-} from 'vue'
+import { ref, readonly } from "vue";
 
 export default function useReducer(reducer, initialArg, init) {
-  const state = ref(init ? init(initialArg) : initialArg)
-  const dispatch = (action) => {
-    state.value = reducer(state.value, action);
-  }
-  
-  return [readonly(state), dispatch]
+	const state = ref(init ? init(initialArg) : initialArg);
+	const dispatch = (action) => {
+		state.value = reducer(state.value, action);
+	};
+
+	return [readonly(state), dispatch];
 }
 
 // ============
@@ -47,7 +44,7 @@ export default function useReducer(reducer, initialArg, init) {
 // export default {
 //   setup() {
 //     const [state, dispatch] = useReducer(reducer, initialState);
-  
+
 //     return {
 //       dispatch,
 //       state,
