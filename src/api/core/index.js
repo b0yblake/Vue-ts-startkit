@@ -1,4 +1,5 @@
 import axios from "axios";
+
 const credentials = {
 	accessToken: "zMnppWFMfcgjvcwXqrTGkXSbPKNHRxxt",
 };
@@ -6,7 +7,7 @@ const credentials = {
 const Repository = (BASE_URL) => ({
 	fetch: (params, option) =>
 		axios.get(BASE_URL, { params: { ...params } }, option),
-	fetchOne: (id, option) => axios.get(BASE_URL + `/${id}`, option),
+	fetchOne: (id, option) => axios.get(`${BASE_URL}/${id}`, option),
 	create: (params, options) =>
 		axios.post(
 			BASE_URL,
@@ -21,7 +22,7 @@ const Repository = (BASE_URL) => ({
 		),
 	update: (id, params, option) =>
 		axios.patch(
-			BASE_URL + `/${id}`,
+			`${BASE_URL}/${id}`,
 			params,
 			{
 				headers: {
@@ -34,7 +35,7 @@ const Repository = (BASE_URL) => ({
 		),
 	updateAll: (params, option) =>
 		axios.put(
-			BASE_URL + `/`,
+			`${BASE_URL}/`,
 			params,
 			{
 				headers: {
@@ -48,7 +49,7 @@ const Repository = (BASE_URL) => ({
 
 	delete: (id, option) =>
 		axios.delete(
-			BASE_URL + `/${id}`,
+			`${BASE_URL}/${id}`,
 			{
 				headers: {
 					"Content-type": "application/json",

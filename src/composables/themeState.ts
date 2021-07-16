@@ -1,7 +1,7 @@
 import { ref, readonly } from "vue";
 
-const stateDialogTheme = ref(false); //global state
-const currentThemeStyle = ref("light"); //global theme
+const stateDialogTheme = ref(false); // global state
+const currentThemeStyle = ref("light"); // global theme
 const setStateDialogTheme = (newState: boolean) =>
 	(stateDialogTheme.value = newState);
 const setCurrentTheme = (newTheme: string) =>

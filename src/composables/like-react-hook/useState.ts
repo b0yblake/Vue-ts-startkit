@@ -1,4 +1,4 @@
-import { ref, reactive, readonly } from "vue";
+import { ref, readonly } from "vue";
 
 interface StateTypes {
 	initialState?: any;
@@ -6,7 +6,7 @@ interface StateTypes {
 }
 
 const useState = (initialState: StateTypes) => {
-	const state = ref(initialState); //local state
+	const state = ref(initialState); // local state
 	const setState = (newState: StateTypes) => {
 		state.value = newState;
 	};

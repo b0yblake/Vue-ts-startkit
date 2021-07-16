@@ -1,7 +1,7 @@
 function cipher(salt) {
-	let textToChars = (text) => text.split("").map((c) => c.charCodeAt(0));
-	let byteHex = (n) => ("0" + Number(n).toString(16)).substr(-2);
-	let applySaltToChar = (code) =>
+	const textToChars = (text) => text.split("").map((c) => c.charCodeAt(0));
+	const byteHex = (n) => `0${Number(n).toString(16)}`.substr(-2);
+	const applySaltToChar = (code) =>
 		textToChars(salt).reduce((a, b) => a ^ b, code);
 
 	return (text) =>
@@ -14,9 +14,9 @@ function cipher(salt) {
 }
 
 function decipher(salt) {
-	let textToChars = (text) => text.split("").map((c) => c.charCodeAt(0));
-	let saltChars = textToChars(salt);
-	let applySaltToChar = (code) => saltChars.reduce((a, b) => a ^ b, code);
+	const textToChars = (text) => text.split("").map((c) => c.charCodeAt(0));
+	const saltChars = textToChars(salt);
+	const applySaltToChar = (code) => saltChars.reduce((a, b) => a ^ b, code);
 	return (encoded) =>
 		decodeURIComponent(
 			encoded

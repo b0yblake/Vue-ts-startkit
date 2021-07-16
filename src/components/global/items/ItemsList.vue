@@ -2,12 +2,7 @@
 	<div class="flex">
 		<h3 class="text-bold">{{ title }}</h3>
 		<ul>
-			<li
-				v-for="(item, index) in listItem"
-				:key="`${item.name}_${index}`"
-				class="'a'"
-				:class="count"
-			>
+			<li v-for="(item, index) in listItem" :key="`${item.name}_${index}`">
 				{{ item.name }}
 			</li>
 		</ul>

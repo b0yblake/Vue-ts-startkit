@@ -9,7 +9,7 @@
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
 		"lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-		"types": ["vite/client", "jest", "node"],
+		"types": ["vite/client", "jest"],
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"],

@@ -1,4 +1,4 @@
-//Webpack
+// Webpack
 // const requireModule = require.context('.', false, /\.js$/)
 
 // Vite

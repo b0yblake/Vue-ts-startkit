@@ -1,4 +1,4 @@
-/** The static configuration related to the application is placed here*/
+/** The static configuration related to the application is placed here */
 import { message } from "ant-design-vue";
 
 const AppConfig = {

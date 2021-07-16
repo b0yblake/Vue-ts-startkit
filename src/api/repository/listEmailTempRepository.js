@@ -1,6 +1,6 @@
 import Repository from "@/api/core";
 
-const BASE_URL = import.meta.env.VITE_MAIN_URL + "/listInbox";
+const BASE_URL = `${import.meta.env.VITE_MAIN_URL}/listInbox`;
 
 const fetch = (params) => {
 	return Repository(BASE_URL).fetch(params);

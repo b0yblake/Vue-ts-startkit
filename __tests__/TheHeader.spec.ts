@@ -1,4 +1,4 @@
-import TheHeader from "@/components/TheHeader"
+import TheHeader from "../src/components/global/TheHeader"
 import { mount, shallowMount } from "@vue/test-utils"
 
 /*

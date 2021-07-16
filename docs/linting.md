@@ -84,17 +84,26 @@ module.exports = {
 > npm i eslint -D
 
 > npx eslint --init
+
 > Select: To check syntax, find problems, and enforce code style
+
 > Select: JavaScript modules (import/export)
+
 > Select: Vue.js
-> Select: Yes
-> Select: Browser
-> Select: Use a popular style guide
-> Select: Airbnb: https://github.com/airbnb/javascript
-> Select: JavaScript
+
 > Select: Yes
 
-`What if` all process not working auto, please refer to run command: 
+> Select: Browser
+
+> Select: Use a popular style guide
+
+> Select: Airbnb: https://github.com/airbnb/
+
+> Select: JavaScript
+
+> Select: Yes
+
+- `What if` all process not working auto, please refer to run command: 
 
 > npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-base eslint-plugin-import eslint-plugin-vue -D
 
@@ -118,13 +127,28 @@ module.exports = {
 }
 ```
 
+### Combine ESLint + Prettier
 
+- Some time, the rule of `ESLint` can conflict with `Prettier`:
 
-### Compine ESLint + Prettier
+```
+```
 
+> npm i eslint-plugin-prettier eslint-config-prettier -D
 
+- Config file `.eslintrc.js`
 
+```
+module.exports = {
+  ...
+  extends: [
+    'plugin:vue/essential',
+    'airbnb-base',
+    'plugin:prettier/recommended' // add prettier plugin
+  ],
+  ...
+}
+```
 
-
-
+> npm run lint-fix
 
