@@ -4,22 +4,23 @@ import router from "@/router";
 // import store from '@/store'
 
 /** Load style sheets */
-// import './styles/antd.less'
+import "@/assets/stylesheets/index.scss";
 
 /** Load configs */
 import { AppConfig } from "@/config/app";
 
 /** Load all Plugins */
-// loadAllPlugins(app)
-// import { loadAllPlugins } from '@/plugins'
-import Fontawesome from "@/plugins/fontawsome";
+import loadAllPlugins from "@/plugins";
 
 /** Inject the global static configuration into the application, which can be read through this.a, which is more convenient than manual injection by provide and inject */
 const app: ReturnType<typeof createApp> = createApp(App);
 app.config.globalProperties = AppConfig;
 
+/** Run all Plugins  */
+loadAllPlugins(app);
+
 /** Load depen needs */
 // app.use(store)
-app.component("fa", Fontawesome);
+
 app.use(router);
 app.mount("#app");

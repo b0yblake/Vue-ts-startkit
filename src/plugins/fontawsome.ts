@@ -15,8 +15,6 @@ import {
 	faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Excute the libs
-// createApp(App).component("fa", FontAwesomeIcon).mount("#app");
 library.add(
 	faGithub,
 	faPlay,
@@ -30,4 +28,8 @@ library.add(
 	faTimes
 );
 
-export default FontAwesomeIcon;
+// Excute the libs
+// createApp(App).component("fa", FontAwesomeIcon).mount("#app");
+export default function loadComponent(app: any) {
+	app.component("fa", FontAwesomeIcon);
+}
