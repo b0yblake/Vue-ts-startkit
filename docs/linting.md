@@ -68,11 +68,16 @@ module.exports = {
 ```
 
 3. Run to check
+
    > npx prettier --write .
 
 4. Install plugin to cover in idle `VisualStudioCode` -> `Extension`
 
 <img src="@screenshot/doc2.jpg" alt="" width="100%" height="auto"><br/>
+
+5. Set default `prettier` when save file
+
+<img src="@screenshot/doc4.jpg" alt="" width="100%" height="auto"><br/>
 
 ### ESLint
 
@@ -103,7 +108,7 @@ module.exports = {
 
 > Select: Yes
 
-- `What if` all process not working auto, please refer to run command: 
+- `What if` all process not working auto, please refer to run command:
 
 > npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-base eslint-plugin-import eslint-plugin-vue -D
 
@@ -132,6 +137,7 @@ module.exports = {
 - Some time, the rule of `ESLint` can conflict with `Prettier`:
 
 ```
+
 ```
 
 > npm i eslint-plugin-prettier eslint-config-prettier -D
@@ -151,4 +157,3 @@ module.exports = {
 ```
 
 > npm run lint-fix
-

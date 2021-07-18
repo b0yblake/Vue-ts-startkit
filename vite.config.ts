@@ -1,10 +1,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import ViteComponents from "vite-plugin-components";
-import vueJsx from "@vitejs/plugin-vue-jsx";
 import { resolve } from "path";
-
-const isProd = process.env.NODE_ENV === "production";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,10 +11,7 @@ export default defineConfig({
 				find: "@",
 				replacement: resolve(__dirname, "/src"),
 			},
-			{
-				find: "~",
-				replacement: resolve(__dirname, "/src"),
-			},
+			{ find: "~", replacement: resolve(__dirname, "/src") },
 			// {find: 'views', replacement: resolve(__dirname, 'src/views')},
 		],
 	},
@@ -54,8 +48,5 @@ export default defineConfig({
 			// works when `directoryAsNamespace: true`
 			globalNamespaces: [],
 		}),
-		// vueJsx({
-		//   options are passed on to @vue/babel-plugin-jsx
-		// })
 	],
 });
