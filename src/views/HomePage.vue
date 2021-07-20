@@ -1,6 +1,14 @@
 <template>
 	<div class="home-layout">
-		<LayoutDefault> Main home </LayoutDefault>
+		<LayoutDefault>
+			Main home
+
+			<v-app>
+				<v-main class="bg-grey-lighten-3">
+					<router-view />
+				</v-main>
+			</v-app>
+		</LayoutDefault>
 	</div>
 </template>
 
