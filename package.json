@@ -15,8 +15,8 @@
 		"lint:script": "eslint --ext .ts,vue --ignore-path .gitignore .",
 		"test": "jest",
 		"test:coverage": "jest --coverage",
+		"commit": "cz",
 		"changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0 -s",
-		"commit": "npx cz",
 		"docs": "typedoc --out ./docs/ ./src/ && npm run serve:docs",
 		"serve:docs": "http-server ./docs -p 3001 -o",
 		"analysis": "cross-env use_analyzer=true vue-cli-service build",
@@ -34,7 +34,7 @@
 	},
 	"config": {
 		"commitizen": {
-			"path": "./node_modules/cz-customizable"
+			"path": "./node_modules/cz-conventional-changelog"
 		}
 	},
 	"dependencies": {
@@ -60,9 +60,8 @@
 	"devDependencies": {
 		"@babel/core": "^7.14.5",
 		"@babel/preset-env": "^7.14.7",
-		"babel-core": "^7.0.0-bridge.0",
-		"@commitlint/cli": "^12.1.1",
-		"@commitlint/config-conventional": "^12.1.1",
+		"@commitlint/cli": "^13.1.0",
+		"@commitlint/config-conventional": "^13.1.0",
 		"@fortawesome/fontawesome-svg-core": "^1.2.35",
 		"@fortawesome/free-brands-svg-icons": "^5.15.3",
 		"@fortawesome/free-solid-svg-icons": "^5.15.3",
@@ -77,11 +76,13 @@
 		"@typescript-eslint/eslint-plugin": "^4.28.3",
 		"@typescript-eslint/parser": "^4.28.3",
 		"@vitejs/plugin-vue": "^1.2.5",
+		"@vue/cli-plugin-unit-jest": "5.0.0-beta.2",
 		"@vue/compiler-sfc": "^3.0.5",
 		"@vue/test-utils": "^2.0.0-rc.10",
-		"@vue/cli-plugin-unit-jest": "5.0.0-beta.2",
 		"autoprefixer": "^10.2.6",
-		"commitizen": "^4.2.3",
+		"babel-core": "^7.0.0-bridge.0",
+		"commitizen": "^4.2.4",
+		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^7.30.0",
 		"eslint-config-airbnb-base": "^14.2.1",
 		"eslint-config-prettier": "^8.3.0",
@@ -89,7 +90,7 @@
 		"eslint-plugin-jest": "^24.3.5",
 		"eslint-plugin-prettier": "^3.4.0",
 		"eslint-plugin-vue": "^7.13.0",
-		"husky": "^6.0.0",
+		"husky": "^7.0.1",
 		"jest": "^26.5.6",
 		"lint-staged": "^11.0.0",
 		"node-sass": "^6.0.0",

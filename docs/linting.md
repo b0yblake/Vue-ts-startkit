@@ -8,10 +8,17 @@
 - Reduce the repeated modification process in the code review process and save time.
 - Automatic formatting, unified coding style, say goodbye to dirty and messy code.
 
+| Library                      | Befenit                                                                                                          |
+| ---------------------------- | :--------------------------------------------------------------------------------------------------------------- |
+| 1. EditorConfig              | Sync all idle between developer to follow 1 convention                                                           |
+| 2. Prettier + ESLint         | Control convention of code by following the rule (Airb2b,..), ESlint check syntax/un-use code ES (Javascript ES) |
+| 3. Husky & lint staged       | Before your commit, Husky & lint taged will pre-check (run lint) and throw error if code not follow ESlint       |
+| 4. Commitizen (& commitlint) | When commit text to git, committizen make your commit follow pattern (feat, fix, feature,...)                    |
+
 ### EditorConfig
 
 - http://editorconfig.org
-- Sync convention between idea now is simple by using editorconfig
+- Sync convention between idle now is simple by using editorconfig
 - Go to `VisualStudioCode` -> `Extendsion` -> `editorconfig`
 
 1. Create file `.editorconfig` at root directory
@@ -136,10 +143,6 @@ module.exports = {
 
 - Some time, the rule of `ESLint` can conflict with `Prettier`:
 
-```
-
-```
-
 > npm i eslint-plugin-prettier eslint-config-prettier -D
 
 - Config file `.eslintrc.js`
@@ -157,3 +160,130 @@ module.exports = {
 ```
 
 > npm run lint-fix
+
+### Husky & Lint staged
+
+`Lint staged`
+
+- When you want to lint just single file (but command `npm run lint` will run all files => unnecessary, wasting time)
+- `Lint staged` will help you run a single file or a cup of files => just add file want to lint to `staged`
+
+`Husky`
+
+- Git Hook tool, which can be set to trigger our commands at lifecycle(various stages) of git (pre-commit, commit-msg, pre-push, etc.)
+-
+
+1. Install
+
+> npm install --save-dev lint-staged
+
+Add config to `package.json`
+
+```
+"lint-staged": {
+	"*.{vue,js,ts}": "eslint --fix"
+}
+```
+
+> npm install --save-dev husky
+
+After install, we need to initial folder `Husky`:
+
+> npx husky install
+
+### Commit your code to git follow pattern (commitizen)
+
+```
+https://www.conventionalcommits.org/en/v1.0.0/
+```
+
+- What is the purpose of `commitizen`?
+- work with team 10 people, it's hard to cover all type of commit (which commit is fix? new feature?) => just follow pattern when commit by commitizen
+
+1. Install
+
+> npm install commitizen -D -g  
+> ( use "-g" to able command git cz)
+
+- Install some `adapter` to use `commitizen`
+
+> commitizen init cz-conventional-changelog --save-dev --save-exact
+
+Add changelog in `package.json`:
+
+```
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+```
+
+> npm install --save-dev @commitlint/config-conventional @commitlint/cli
+
+- Add file `commitlint.config.js`
+
+```
+module.exports = {
+	extends: ["@commitlint/config-conventional"]
+};
+```
+
+2. How to use
+
+- `git add ...` like normal git
+- instead of `git commit ...` => Now we use `git cz` => finish all QA and commit
+- `git push...` like normal git
+
+3. What is it?
+
+-`It's the pattern of commit message` <br>
+
+<img src="@screenshot/doc5.jpg" alt="" width="100%" height="auto"><br/>
+
+- Normaly, commit message contain 3 container: `<header>` `<body>` `<footer>`
+- Follow careful `https://www.conventionalcommits.org/en/v1.0.0/`
+
+```
+// HEADER
+// The header part includes three fields type (required), scope (optional) and subject (required)
+<type>(<scope>): <subject>
+
+--------------
+
+// BODY
+[optional body]
+
+// ex. Commit message with no body
+docs: correct spelling of CHANGELOG
+
+// ex. Commit message with body
+fix: correct minor typos in code
+see the issue for details
+on typos fixed.
+
+Reviewed-by: Z
+Refs #133
+
+--------------
+
+// FOOTER
+[optional footer(s)]
+
+// ex. Commit message with description and breaking change footer
+feat: allow provided config object to extend other configs
+
+BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+```
+
+```
+// ex. With full header body footer
+feat(reactivity): dereference nested effect scopes on manual stop
+
+Added new reactive to system:
+- ref to single variable
+- reactive to object variables
+- unref to remove reactive system out of the variable
+
+BREAKING CHANGE: unhandle the beauty of code.
+```
